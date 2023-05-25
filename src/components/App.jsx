@@ -125,11 +125,11 @@ export const App = () => {
     <Layout>
       <div>
         <h1>Phonebook</h1>
-        <ContactForm addContact={addContact} />
+        <ContactForm />
 
         <h2>Contacts</h2>
-        <Filter filter={filter} onChangeInput={onChangeInput} />
-        <ContactList contacts={filtering()} delContact={delContact} />
+        <Filter />
+        <ContactList />
       </div>
       <GlobalStyle />
     </Layout>
