@@ -83,50 +83,49 @@ const initialContacts = [
 //   }
 // }
 export const App = () => {
-  const [contacts, setContacts] = useState(
-    () => JSON.parse(window.localStorage.getItem('contacts')) ?? initialContacts
-  );
-  const [filter, setFilter] = useState('');
+  // const [contacts, setContacts] = useState(
+  //   () => JSON.parse(window.localStorage.getItem('contacts')) ?? initialContacts
+  // );
+  // const [filter, setFilter] = useState('');
 
-  useEffect(() => {
-    localStorage.setItem('contacts', JSON.stringify(contacts));
-  }, [contacts]);
+  // useEffect(() => {
+  //   localStorage.setItem('contacts', JSON.stringify(contacts));
+  // }, [contacts]);
 
-  const onChangeInput = evt => {
-    setFilter(evt.target.value);
-  };
+  // const onChangeInput = evt => {
+  //   setFilter(evt.target.value);
+  // };
 
-  const addContact = ({ name, number }) => {
-    contacts.some(
-      contact => contact.name.toLocaleLowerCase() === name.toLocaleLowerCase()
-    )
-      ? alert(`${name} is already in contacts`)
-      : setContacts([
-          ...contacts,
-          {
-            id: nanoid(6),
-            name: name,
-            number: number,
-          },
-        ]);
-  };
+  // const addContact = ({ name, number }) => {
+  //   contacts.some(
+  //     contact => contact.name.toLocaleLowerCase() === name.toLocaleLowerCase()
+  //   )
+  //     ? alert(`${name} is already in contacts`)
+  //     : setContacts([
+  //         ...contacts,
+  //         {
+  //           id: nanoid(6),
+  //           name: name,
+  //           number: number,
+  //         },
+  //       ]);
+  // };
 
-  const delContact = id =>
-    setContacts(contacts.filter(contact => contact.id !== id));
+  // const delContact = id =>
+  //   setContacts(contacts.filter(contact => contact.id !== id));
 
-  const filtering = () => {
-    const filteredContacts = contacts.filter(contact =>
-      contact.name.toLowerCase().includes(filter.toLowerCase())
-    );
-    return filteredContacts;
-  };
+  // const filtering = () => {
+  //   const filteredContacts = contacts.filter(contact =>
+  //     contact.name.toLowerCase().includes(filter.toLowerCase())
+  //   );
+  //   return filteredContacts;
+  // };
 
   return (
     <Layout>
       <div>
         <h1>Phonebook</h1>
         <ContactForm />
-
         <h2>Contacts</h2>
         <Filter />
         <ContactList />
