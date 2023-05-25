@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "//boikoigor.github.io/goit-react-hw-06-phonebook/static/css/main.28f5bfe0.css",
+    "main.js": "//boikoigor.github.io/goit-react-hw-06-phonebook/static/js/main.47a92d2f.js",
+    "index.html": "//boikoigor.github.io/goit-react-hw-06-phonebook/index.html",
+    "main.28f5bfe0.css.map": "//boikoigor.github.io/goit-react-hw-06-phonebook/static/css/main.28f5bfe0.css.map",
+    "main.47a92d2f.js.map": "//boikoigor.github.io/goit-react-hw-06-phonebook/static/js/main.47a92d2f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.28f5bfe0.css",
+    "static/js/main.47a92d2f.js"
+  ]
+}
