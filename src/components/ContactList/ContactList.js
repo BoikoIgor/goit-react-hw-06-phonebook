@@ -1,5 +1,5 @@
-import { arrContacts, delContact } from 'components/_Redux/contactsSlice';
-import { filterValue } from 'components/_Redux/filterSlice';
+import { arrContacts, delContact } from 'components/Redux/contactsSlice';
+import { filterValue } from 'components/Redux/filterSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
 export const ContactList = () => {

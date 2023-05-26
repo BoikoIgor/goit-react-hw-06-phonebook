@@ -1,15 +1,40 @@
 import { useState } from 'react';
-import { addContact } from 'components/_Redux/contactsSlice';
-import { useDispatch } from 'react-redux';
+import { addContact } from 'components/Redux/contactsSlice';
+import { useDispatch, useSelector } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
+import { arrContacts } from 'components/Redux/contactsSlice';
 
 export const ContactForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
   const dispatch = useDispatch();
+  const allContacts = useSelector(arrContacts);
 
   const onSubmit = e => {
     e.preventDefault();
+
+    const uniqueName = name.toLowerCase().trim();
+    const uniqueNumber = number.toLowerCase().trim();
+    if (
+      allContacts.find(
+        ({ name }) => name.toLocaleLowerCase().trim() === uniqueName
+      )
+    ) {
+      alert(
+        `Please enter another name. ${name} is already exists in your contacts`
+      );
+      return;
+    }
+    if (
+      allContacts.find(
+        ({ number }) => number.toLocaleLowerCase().trim() === uniqueNumber
+      )
+    ) {
+      alert(
+        `Please enter another number. ${number} is already exists in your contacts`
+      );
+      return;
+    }
     const id = nanoid();
     dispatch(addContact({ name, number, id }));
     setName('');
